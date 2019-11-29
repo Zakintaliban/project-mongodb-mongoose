@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
+  order: [{ type: Schema.Types.ObjectId, ref: "Order" }],
   name: String,
   email: String,
   password: String,
